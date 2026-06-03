@@ -14,9 +14,9 @@ git push -u origin main
 
 ## Project Overview
 
-This is an existing project that was previously developed for Sapiens. The objective is **not to rebuild the application from scratch**, but to enhance, modernize, and extend the current codebase while preserving existing business logic and functionality.
+This is an existing project that was previously developed for Sapieon. The objective is **not to rebuild the application from scratch**, but to enhance, modernize, and extend the current codebase while preserving existing business logic and functionality.
 
-The final deliverable should serve as an improved replica of the existing Sapiens implementation, incorporating all newly defined requirements and architectural improvements.
+The final deliverable should serve as an improved replica of the existing Sapieon implementation, incorporating all newly defined requirements and architectural improvements.
 
 ## Technical Requirements
 
@@ -94,7 +94,7 @@ Update and maintain:
 
 Deliver a production-ready, scalable, and maintainable ERP application that:
 
-1. Preserves existing Sapiens business functionality.
+1. Preserves existing Sapieon business functionality.
 2. Uses Next.js for the frontend.
 3. Uses Node.js for the backend.
 4. Uses MongoDB instead of PostgreSQL.
