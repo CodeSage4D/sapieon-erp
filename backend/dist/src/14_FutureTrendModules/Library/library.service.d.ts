@@ -1,0 +1,258 @@
+import { PrismaService } from '../../01_Core/prisma/prisma.service';
+export declare class LibraryService {
+    private prisma;
+    constructor(prisma: PrismaService);
+    getBooks(institutionId: string, search?: string): Promise<{
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        institutionId: string;
+        title: string;
+        isbn: string;
+        author: string;
+        availableCopies: number;
+        totalCopies: number;
+    }[]>;
+    getBookById(institutionId: string, id: string): Promise<{
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        institutionId: string;
+        title: string;
+        isbn: string;
+        author: string;
+        availableCopies: number;
+        totalCopies: number;
+    }>;
+    createBook(institutionId: string, data: any): Promise<{
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        institutionId: string;
+        title: string;
+        isbn: string;
+        author: string;
+        availableCopies: number;
+        totalCopies: number;
+    }>;
+    updateBook(institutionId: string, id: string, data: any): Promise<{
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        institutionId: string;
+        title: string;
+        isbn: string;
+        author: string;
+        availableCopies: number;
+        totalCopies: number;
+    }>;
+    deleteBook(institutionId: string, id: string): Promise<{
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        institutionId: string;
+        title: string;
+        isbn: string;
+        author: string;
+        availableCopies: number;
+        totalCopies: number;
+    }>;
+    getIssues(institutionId: string): Promise<({
+        student: {
+            id: string;
+            firstName: string;
+            lastName: string;
+            class: {
+                name: string;
+                section: string | null;
+            };
+            scholarNumber: string;
+            rollNumber: string;
+        };
+        book: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            institutionId: string;
+            title: string;
+            isbn: string;
+            author: string;
+            availableCopies: number;
+            totalCopies: number;
+        };
+    } & {
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        status: string;
+        studentId: string;
+        bookId: string;
+        issueDate: Date;
+        returnDate: Date | null;
+    })[]>;
+    getStudentIssues(studentId: string): Promise<({
+        book: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            institutionId: string;
+            title: string;
+            isbn: string;
+            author: string;
+            availableCopies: number;
+            totalCopies: number;
+        };
+    } & {
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        status: string;
+        studentId: string;
+        bookId: string;
+        issueDate: Date;
+        returnDate: Date | null;
+    })[]>;
+    issueBook(institutionId: string, data: {
+        studentId: string;
+        bookId: string;
+    }): Promise<{
+        student: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            city: string | null;
+            state: string | null;
+            pinCode: string | null;
+            institutionId: string;
+            userId: string;
+            firstName: string;
+            lastName: string;
+            status: string;
+            aadhaarNumber: string | null;
+            gender: string;
+            bloodGroup: string | null;
+            bankName: string | null;
+            bankBranch: string | null;
+            accNumber: string | null;
+            ifscCode: string | null;
+            branchId: string | null;
+            classId: string;
+            scholarNumber: string;
+            rollNumber: string;
+            dateOfBirth: Date;
+            admissionDate: Date;
+            samagraId: string | null;
+            familyId: string | null;
+            penNumber: string | null;
+            birthCertificateNumber: string | null;
+            religion: string | null;
+            casteCategory: string | null;
+            nationality: string;
+            motherTongue: string | null;
+            fatherName: string | null;
+            motherName: string | null;
+            fatherOccupation: string | null;
+            motherOccupation: string | null;
+            annualIncome: number | null;
+            houseNo: string | null;
+            street: string | null;
+            district: string | null;
+            accHolderName: string | null;
+            upiId: string | null;
+            prevSchoolName: string | null;
+            tcNumber: string | null;
+            migrationCertNo: string | null;
+            parentId: string | null;
+        };
+        book: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            institutionId: string;
+            title: string;
+            isbn: string;
+            author: string;
+            availableCopies: number;
+            totalCopies: number;
+        };
+    } & {
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        status: string;
+        studentId: string;
+        bookId: string;
+        issueDate: Date;
+        returnDate: Date | null;
+    }>;
+    returnBook(institutionId: string, issueId: string): Promise<{
+        student: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            city: string | null;
+            state: string | null;
+            pinCode: string | null;
+            institutionId: string;
+            userId: string;
+            firstName: string;
+            lastName: string;
+            status: string;
+            aadhaarNumber: string | null;
+            gender: string;
+            bloodGroup: string | null;
+            bankName: string | null;
+            bankBranch: string | null;
+            accNumber: string | null;
+            ifscCode: string | null;
+            branchId: string | null;
+            classId: string;
+            scholarNumber: string;
+            rollNumber: string;
+            dateOfBirth: Date;
+            admissionDate: Date;
+            samagraId: string | null;
+            familyId: string | null;
+            penNumber: string | null;
+            birthCertificateNumber: string | null;
+            religion: string | null;
+            casteCategory: string | null;
+            nationality: string;
+            motherTongue: string | null;
+            fatherName: string | null;
+            motherName: string | null;
+            fatherOccupation: string | null;
+            motherOccupation: string | null;
+            annualIncome: number | null;
+            houseNo: string | null;
+            street: string | null;
+            district: string | null;
+            accHolderName: string | null;
+            upiId: string | null;
+            prevSchoolName: string | null;
+            tcNumber: string | null;
+            migrationCertNo: string | null;
+            parentId: string | null;
+        };
+        book: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            institutionId: string;
+            title: string;
+            isbn: string;
+            author: string;
+            availableCopies: number;
+            totalCopies: number;
+        };
+    } & {
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        status: string;
+        studentId: string;
+        bookId: string;
+        issueDate: Date;
+        returnDate: Date | null;
+    }>;
+}
